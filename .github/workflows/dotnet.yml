@@ -9,7 +9,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        path: [./C#/SharpPassword.csproj]
     
     runs-on: ${{ matrix.os }}
 
@@ -20,6 +19,6 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Build
-      run: dotnet build --configuration Release ${{ matrix.path }}
+      run: dotnet build --configuration Release ./C#/SharpPassword.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal ${{ matrix.path }}
+      run: dotnet test --no-build --verbosity normal ./C#/SharpPassword.csproj
