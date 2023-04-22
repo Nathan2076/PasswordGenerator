@@ -3,11 +3,7 @@
 
 name: .NET
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main", "cs/hotfix/dotnet.yml" ]
+on: [push]
 
 jobs:
   build:
