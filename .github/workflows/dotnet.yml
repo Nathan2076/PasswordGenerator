@@ -1,7 +1,17 @@
 name: .NET
 
-# Runs on any branch, including PRs
-on: [push]
+# Runs on general and C#-specific branches only, including in pull requests
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+      - 'cs/**'
+  pull_request:
+    branches:
+      - main
+      - 'release/**'
+      - 'cs/**'
 
 jobs:
   build:
@@ -19,6 +29,6 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Build
-      run: dotnet build --configuration Release ./C#/
+      run: dotnet build ./C#/
     - name: Test
       run: dotnet test --no-build --verbosity normal ./C#/
