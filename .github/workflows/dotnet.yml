@@ -7,11 +7,6 @@ on:
       - main
       - 'release/**'
       - 'cs/**'
-  pull_request:
-    branches:
-      - main
-      - 'release/**'
-      - 'cs/**'
 
 jobs:
   build:
