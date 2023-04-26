@@ -1,0 +1,27 @@
+name: g++ build
+
+# Runs on general and C++-specific branches only, including in pull requests
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+      - 'cpp/**'
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check g++ version
+      run: g++ --version
+    - name: Build
+      run: g++ ./C++/main.cpp ./C++/chars.h
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Check g++ version
+      run: C:\msys64\mingw64\bin\g++ --version
+    - name: Build
+      run: C:\msys64\mingw64\bin\g++ ./C++/main.cpp ./C++/chars.h
