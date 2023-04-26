@@ -14,14 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Check g++ version
-      run: g++ --version
+      run: g++-12 --version
     - name: Build
-      run: g++ ./C++/main.cpp ./C++/chars.h
+      run: g++-12 ./C++/main.cpp ./C++/chars.h
   windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - name: Check g++ version
-      run: C:\msys64\mingw64\bin\g++ --version
+      run: C:\msys64\mingw64\bin\g++.exe --version
     - name: Build
-      run: C:\msys64\mingw64\bin\g++ ./C++/main.cpp ./C++/chars.h
+      run: C:\msys64\mingw64\bin\g++.exe ./C++/main.cpp ./C++/chars.h
