@@ -1,0 +1,25 @@
+name: CMake
+
+# Runs on general and C++-specific branches only, including in pull requests
+on:
+  push:
+    branches:
+      - main
+      - 'release/**'
+      - 'cpp/**'
+
+jobs:
+  build:
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure
+      run: cmake -S ./ -B ./C++/build/
+    - name: Build
+      run: cmake --build ./C++/build/
