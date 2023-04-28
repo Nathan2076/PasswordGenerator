@@ -1,4 +1,4 @@
-#ifndef CHARS_H
+﻿#ifndef CHARS_H
 #define CHARS_H
 
 #include <array>

@@ -1,4 +1,4 @@
-name: CMake
+name: CMake Build
 
 # Runs on general and C++-specific branches only, including in pull requests
 on:
