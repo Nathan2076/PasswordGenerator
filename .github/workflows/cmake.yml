@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: cmake --build ./C++/build/
 
-  build (windows-latest):
+  build_windows-latest:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
