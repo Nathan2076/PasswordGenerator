@@ -1,4 +1,4 @@
-name: g++ build
+name: CMake build
 
 # Runs on general and C++-specific branches only, including in pull requests
 on:
@@ -21,12 +21,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Install g++
-      run: |
-        C:\msys64\ucrt64.exe
-        pacman -S mingw-w64-ucrt-x86_64-gcc
-        y
-    - name: Check g++ version
-      run: C:\msys64\ucrt64\bin\g++.exe --version
+    - name: Compile
+      run: cmake -S ./C++/ -B ./C++/build/
     - name: Build
-      run: C:\msys64\ucrt64\bin\g++.exe ./C++/main.cpp ./C++/chars.h
+      run: cmake --build ./C++/build/ --config Release
