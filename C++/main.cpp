@@ -19,7 +19,7 @@ int main()
 
     std::wstring password = generate_password(length);
 
-    std::wofstream passwordFile("password.txt");
+    std::wofstream passwordFile("./password.txt");
     passwordFile << password;
     passwordFile.close();
 
