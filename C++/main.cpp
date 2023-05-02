@@ -1,21 +1,40 @@
-#include "chars.h"
 #include <iostream>
+#include <fstream>
 #include <random>
 #include <io.h>
 #include <fcntl.h>
+#include "chars.h"
+
+std::wstring generate_password(int);
 
 int main()
 {
-    std::cout << "Welcome to SharpPassword (now in C++)!\n";
-    std::cout << "Type the password length: ";
+    _setmode(_fileno(stdout), _O_U16TEXT);
 
+    std::wcout << "Welcome to Password++!\n";
+    std::wcout << "Type the password length: ";
+    
     int length{};
     std::cin >> length;
 
+    std::wstring password = generate_password(length);
+
+    std::wofstream passwordFile("password.txt");
+    passwordFile << password;
+    passwordFile.close();
+
+    std::wcout << "Password created!\n";
+    std::wcout << password;
+
+    return 0;
+}
+
+std::wstring generate_password(int length)
+{
     std::random_device rd;
     std::uniform_int_distribution<int> dist(0, 3);
 
-    _setmode(_fileno(stdout), _O_U16TEXT);
+    std::wstring password{};
 
     for (int i{0}; i < length; ++i)
     {
@@ -24,29 +43,29 @@ int main()
             case 0:
             {
                 std::uniform_int_distribution<int> dist(0, 25);
-                std::wcout << Chars::uppercaseLetters[dist(rd)];
+                password += Chars::uppercaseLetters[dist(rd)];
                 break;
             }
             case 1:
             {
                 std::uniform_int_distribution<int> dist(0, 25);
-                std::wcout << Chars::lowercaseLetters[dist(rd)];
+                password += Chars::lowercaseLetters[dist(rd)];
                 break;
             }
             case 2:
             {
                 std::uniform_int_distribution<int> dist(0, 9);
-                std::wcout << Chars::numbers[dist(rd)];
+                password += Chars::numbers[dist(rd)];
                 break;
             }
             case 3:
             {
                 std::uniform_int_distribution<int> dist(0, 31);
-                std::wcout << Chars::symbols[dist(rd)];
+                password += Chars::symbols[dist(rd)];
                 break;
             }
         }
     }
 
-    return 0;
+    return password;
 }

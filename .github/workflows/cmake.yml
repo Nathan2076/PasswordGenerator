@@ -10,19 +10,6 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-    - uses: actions/checkout@v3
-    - name: Configure
-      run: cmake -S ./C++/ -B ./C++/build/
-    - name: Build
-      run: cmake --build ./C++/build/
-
-  build_windows-latest:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3

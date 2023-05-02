@@ -7,3 +7,9 @@ obj/
 
 # CMake build results
 build/
+
+# Clang/g++ build results
+*.exe
+
+# Password file
+password.txt
