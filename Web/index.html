@@ -8,17 +8,29 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="main.js"></script>
 </head>
 <body>
     <noscript>
-        <div id="js-warning">
-            <p id="js-warning-text">This website creates passwords on the client-side. Because of this, JavaScript must be enabled.</p>
+        <div id="warning">
+            <p id="warning-text">This website creates passwords on the client-side. Because of this, JavaScript must be enabled.</p>
         </div>
     </noscript>
-    <div id="main">
-        <h1>Password Generator</h1>
-    </div>
+    <h1>Password Generator</h1>
+    <form onsubmit="validate(event)">
+        <label for="length">Password length</label>
+        <input type="number" name="length" id="length">
+        <button>Generate</button>
+    </form>
+    <textarea id="password" disabled=""></textarea>
+    <button id="copy" class="copy" disabled><img src="./assets/icons/content_copy_FILL0_wght400_GRAD0_opsz24.svg">Copy password</button>
+    <button id="downloads" onclick="download()" class="copy" disabled><img id="download" src="./assets/icons/download_FILL0_wght400_GRAD0_opsz24.svg">Download password</button>
+    <script>
+        if (document.getElementById("password").innerHTML == "") {
+            document.getElementById("download").setAttribute("src", "./assets/icons/file_download_off_FILL0_wght400_GRAD0_opsz24.svg");
+        }
+    </script>
 </body>
 </html>

@@ -12,31 +12,7 @@ html, body {
 
 body {
     font-family: "Noto Sans", unifont, sans-serif;
-}
 
-#js-warning {
-    width: 720px;
-    height: 32px;
-    text-align: center;
-    background-color: #F0A1A2;
-    padding: 0.5em;
-    border: 2px solid #ED585B;
-    border-radius: 15px;
-    position: absolute;
-    top: 1em;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-#js-warning-text {
-    margin: 0;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#main {
     padding: 1em;
     text-align: center;
     width: 500px;
@@ -48,4 +24,47 @@ body {
     border: 2px solid #D3D6F2;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(65, 83, 237, 0.5);
+}
+
+#warning {
+    width: 720px;
+    height: 32px;
+    text-align: center;
+    background-color: #F0A1A2;
+    padding: 0.5em;
+    border: 2px solid #ED585B;
+    border-radius: 15px;
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+#warning-text {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.copy {
+    background-color: #4153ED;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 0.5em;
+    border: 2px solid #3240BA;
+}
+
+.copy:hover {
+    background-color: #3240BA;
+}
+
+#copy {
+    cursor: not-allowed;
+}
+#downloads {
+    cursor: not-allowed;
 }
