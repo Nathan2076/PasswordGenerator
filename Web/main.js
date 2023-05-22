@@ -1,8 +1,10 @@
+// Cryptographically secure pseudorandom number generator w/ range
+// Implementation taken from: https://stackoverflow.com/a/41452318
 function random(min, max) {
     var range = max - min;
 
     if (range <= 0) {
-        throw new Exception("The maximum value must be larger than the minimum.");
+        throw new Exception("The maximum value must be greater than the minimum.");
     }
 
     var requestBytes = Math.ceil(Math.log2(range) / 8);
@@ -40,16 +42,16 @@ function validate(e) {
 
     var passwordLength = document.getElementById("length").value;
     var password = generatePassword(passwordLength);
+    
+    styleDownloadButton();
 
-    console.log(password)
     document.getElementById("password").innerHTML = password;
 
     file = new Blob([password], {type: "text/plain"});
 }
 
 function generatePassword(length) {
-    var chosenArray;
-    var password = "";
+    var chosenArray, password = "";
 
     for (var i = 0; i < length; i++)
     {
@@ -72,26 +74,34 @@ function generatePassword(length) {
         }
     }
 
-    document.getElementById("download").setAttribute("src", "./assets/icons/download_FILL0_wght400_GRAD0_opsz24.svg");
-    document.getElementById("copy").removeAttribute("disabled");
-    document.getElementById("downloads").removeAttribute("disabled");
-    document.getElementById("copy").style.cursor = "pointer";
-    document.getElementById("downloads").style.cursor = "pointer";
     return password;
 }
 
+function styleDownloadButton() {
+    document.getElementById("download-icon").setAttribute("src", "./assets/icons/download.svg");
+    document.getElementById("download").removeAttribute("disabled");
+    document.getElementById("download").style.cursor = "pointer";
+    document.getElementById("download").style.borderColor = "#3240BA";
+    document.getElementById("download").style.backgroundColor = "#4153ED";
+}
+
+// File downloader
+// Implementation taken from: https://stackoverflow.com/a/30832210
 function download()
 {
     var filename = "password";
 
-    if (window.navigator.msSaveOrOpenBlob) // IE10+
+    if (window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveOrOpenBlob(file, filename);
-    else { // Others
+    } else {
         var a = document.createElement("a"), url = URL.createObjectURL(file);
+
         a.href = url;
         a.download = filename;
+
         document.body.appendChild(a);
         a.click();
+        
         setTimeout(function() {
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
