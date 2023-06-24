@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: unifont;
+    src: url(./assets/fonts/unifont/unifont.otf) format("opentype");
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+    font-family: "Noto Sans", unifont, sans-serif;
+
+    background-color: #1A1C24;
+    color: white;
+}
+
+#main {
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+
+    width: 500px;
+    height: 500px;
+    padding: 1em;
+    border: 2px solid #515770;
+    border-radius: 30px;
+
+    text-align: center;
+
+    transform: translate(-50%, -50%);
+}
+
+.warning {
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    z-index: 1;
+
+    width: 760px;
+    height: 32px;
+    padding: 0.5em;
+    border: 2px solid #ED585B;
+    border-radius: 15px;
+
+    background-color: #F0A1A2;
+
+    text-align: center;
+    
+    transform: translateX(-50%);
+}
+
+.warning-text {
+    position: relative;
+    top: 50%;
+
+    margin: 0;
+
+    transform: translateY(-50%);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 16px 0;
+}
+
+#length {
+    margin: 0 8px;
+    border: 2px solid #2F3240;
+    border-radius: 5px;
+    
+    background-color: #1A1C24;
+    
+    color: white; 
+}
+
+button {
+    padding: 0.5em;
+    border: 2px solid #3240BA;
+    border-radius: 10px;
+
+    background-color: #4153ED;
+    
+    color: white;
+    text-align: center;
+    
+    transition: background-color 200ms, border-color 200ms;
+}
+
+button:hover {
+    border-color: #1E266E;
+
+    background-color: #3240BA;
+}
+
+#generate {
+    cursor: pointer;
+}
+
+#password {
+    width: 492px;
+    height: 128px;
+    border: 2px solid #2F3240;
+    border-radius: 20px;
+
+    color: white;
+    background-color: #252833;
+
+    font-family: "Noto Sans", unifont, monospace;
+    font-size: 1em;
+    
+    text-align: center;
+    
+    resize: none;
+}
+
+#download {
+    width: 48px;
+    height: 48px;
+    border-color: #36363D;
+
+    background-color: #626370;
+    
+    cursor: not-allowed;
+}
