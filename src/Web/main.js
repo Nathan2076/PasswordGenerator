@@ -68,9 +68,9 @@ function validate(e) {
         passwordArea.style.fontSize = fontSize - 0.1 + "em";
     }
 
-    var tamanhoMinimo = 0.8;
+    var minSize = 0.8;
 
-    if (fontSize < tamanhoMinimo)
+    if (fontSize < minSize)
     {
         passwordArea.style.fontSize = tamanhoMinimo + "em";
     }
