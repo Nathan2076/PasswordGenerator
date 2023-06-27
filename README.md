@@ -10,4 +10,32 @@
 </p>
 <br />
 
-## A
+## Overview
+
+
+## Usage
+
+### Console
+
+### Web
+
+
+## 
+
+
+## Screenshots
+
+
+## What's to Come
+
+Future plans!
+
+Planned for v1.1.0:
+* All Unicode characters support;
+* Uppercase/lowercase letters, numbers, symbols & Unicode selectors.
+
+Planned for v1.2.0:
+* Character selector
+
+
+## Credits
