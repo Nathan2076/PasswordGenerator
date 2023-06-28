@@ -32,10 +32,12 @@ Future plans!
 
 Planned for v1.1.0:
 * All Unicode characters support;
-* Uppercase/lowercase letters, numbers, symbols & Unicode selectors.
+* Uppercase/lowercase letters, numbers, symbols & Unicode selectors;
+* Light theme;
+* Translation for Portuguese.
 
 Planned for v1.2.0:
-* Character selector
+* Individual character selector.
 
 
 ## Credits
