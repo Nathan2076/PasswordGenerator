@@ -34,10 +34,15 @@ Planned for v1.1.0:
 * All Unicode characters support;
 * Uppercase/lowercase letters, numbers, symbols & Unicode selectors;
 * Light theme;
+* "Copy Password" function;
 * Translation for Portuguese.
 
 Planned for v1.2.0:
-* Individual character selector.
+* Individual character selector;
+* (Unconfirmed) Interface for C# and C++ versions.
+
+Planned for v1.3.0:
+* Built-in entropy calculator;
 
 
 ## Credits
