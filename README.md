@@ -24,6 +24,7 @@
 
 
 ## Screenshots
+![Password++ example](https://github.com/Nathan2076/PasswordGenerator/assets/68337317/45c70718-032a-483b-8e56-f11941f8880e)
 
 
 ## What's to Come
