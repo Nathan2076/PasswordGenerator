@@ -12,6 +12,11 @@
 
 ## Overview
 
+This is a list of simple password generation programs written in 3 different languages, each one with its own purpose.
+* C# (SharpPassword) - the one I started with, and the best one in my opinion. Although it may be slower than, say, C++, C# has built-in cross-platform support for Unicode rendering and is the most easy to set up.
+* C++ (Password++) - although it's the hardest to render Unicode, making it Windows-only, it is also the most efficient, since C++ is better at performance than the other two.
+* JavaScript (I don't have a name for it yet) - it's just for an online version, since it's way easier to use a program on your browser than download it and run. Also better if you're using it on a phone.
+
 
 ## Usage
 
